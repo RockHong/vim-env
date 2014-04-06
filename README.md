@@ -11,3 +11,6 @@ ln -s ctags ...      !!! use full path when create slink
 
 ctags configuration file doesn't support comment...
 one option a line in ctags configuration file
+
+
+colorscheme .. you can set the coloarscheme of your teminal...
