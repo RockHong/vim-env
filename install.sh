@@ -41,10 +41,8 @@ if [ $? -ne 0 ]; then
 #if [ $? -ne 0 ]; then
 #  echo "ruby doesn't exist. please install it, or command-t won't work."
 else # assume that if vim with "+ruby" then ruby is installed
-  ( cd ~/.vim/bundle/command-t/ruby/command-t ; ruby extconf.rb ; make )
-  if [ $? -ne 0 ]; then
-    echo "command-t is fully installed. please fix it manually"
-  fi
+  ( cd ~/.vim/bundle/command-t/ruby/command-t ; ruby extconf.rb ; make || 
+    echo "command-t is fully installed. please fix it manually" ; make clean )
 fi
 
 
