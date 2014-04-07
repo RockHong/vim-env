@@ -1,4 +1,5 @@
 execute pathogen#infect()
+call    pathogen#helptags()
 syntax on
 filetype plugin indent on
 
@@ -28,6 +29,7 @@ set ruler                           " show where you are
 set scrolloff=3                     " show context above/below cursorline
 set shiftwidth=4                    " normal mode indentation commands use 4 spaces
 "set showcmd
+set ignorecase                      " this is needed to enable smartcase
 set smartcase                       " case-sensitive search if any caps
 set softtabstop=4                   " insert mode tab and backspace use 4 spaces
 set tabstop=8                       " actual tabs occupy 8 characters. before change it, check help

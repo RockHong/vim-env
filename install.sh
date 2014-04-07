@@ -31,6 +31,23 @@ if [ $? -ne 0 ]; then
   echo "Exuberant ctags doesn't exist. please install using zypper or from source"
 fi
 
+# for command-t plugin
+vim --version | grep "+ruby" > /dev/null
+if [ $? -ne 0 ]; then
+  echo "command-t plugin needs a ruby supported vim version"
+#fi
+#
+#ruby --version > /dev/null
+#if [ $? -ne 0 ]; then
+#  echo "ruby doesn't exist. please install it, or command-t won't work."
+else # assume that if vim with "+ruby" then ruby is installed
+  ( cd ~/.vim/bundle/command-t/ruby/command-t ; ruby extconf.rb ; make )
+  if [ $? -ne 0 ]; then
+    echo "command-t is fully installed. please fix it manually"
+  fi
+fi
+
+
 # create symbol links for .vimrc, .gvimrc, and .ctags
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
