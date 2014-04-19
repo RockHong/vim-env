@@ -33,7 +33,10 @@ set softtabstop=4                   " insert mode tab and backspace use 4 spaces
 set tabstop=8                       " actual tabs occupy 8 characters. before change it, check help
 set wildmenu                        " show a navigable menu for tab completion
 set wildmode=longest,list,full      " TODO test
-set mouse=a                         " Enable basic mouse behavior such as resizing buffers.
+"set mouse=a                         " Enable basic mouse behavior such as resizing buffers.
+                                     " disable it, so that double-clicking a word can copy it and paste it in terminal
+set hlsearch                        " highlight searching word. you can remove the highlight by :noh, it will highlight again next search
+                                     
 
 
 " keyboard shortcuts
