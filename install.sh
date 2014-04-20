@@ -54,6 +54,7 @@ else # assume that if vim with "+ruby" then ruby is installed
   ( cd ~/.vim/bundle/command-t/ruby/command-t ; ruby extconf.rb ; make || 
     echo "command-t is not fully installed. please read the online manual and fix it" ; make clean )
 fi
-# on mac the above compilation command may not work, due to ruby version and clang
+# if on mac, clang complains that it encounters some option error, you can try to add following before make:
+# ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future
 
 
