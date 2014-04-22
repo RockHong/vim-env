@@ -60,7 +60,7 @@ nmap <leader><space> :call whitespace#strip_trailing()<CR>
 
 " plugin settings
 let g:CommandTMaxHeight=20
-let g:NERDSpaceDelims=1
+"let g:NERDSpaceDelims=1              " seems default value(0) is better
 let g:gitgutter_enabled = 0
 " ZOMG the_silver_searcher is so much faster than ack"
 let g:ackprg = 'ag --nogroup --column'
