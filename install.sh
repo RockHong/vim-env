@@ -13,15 +13,15 @@ fi
 if [ -e ~/.gvimrc ]; then
   mv ~/.gvimrc ~/.gvimrc.old
 fi
-if [ -e ~/.ctags ]; then
-  mv ~/.ctags ~/.ctags.old
-fi
+#if [ -e ~/.ctags ]; then
+#  mv ~/.ctags ~/.ctags.old
+#fi
 
 
 # create symbol links for .vimrc, .gvimrc, and .ctags
 ln -s $CURRENT_DIR/vimrc ~/.vimrc
 ln -s $CURRENT_DIR/gvimrc ~/.gvimrc
-ln -s $CURRENT_DIR/ctags ~/.ctags
+#ln -s $CURRENT_DIR/ctags ~/.ctags
 
 # create symbol link for .vim if needed
 if [ $CURRENT_DIR != $HOME_DIR/.vim ];then

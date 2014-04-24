@@ -38,6 +38,7 @@ set wildmode=longest,list,full      " TODO test
 "set mouse=a                         " Enable basic mouse behavior such as resizing buffers.
                                      " disable it, so that double-clicking a word can copy it and paste it in terminal
 set hlsearch                        " highlight searching word. you can remove the highlight by :noh, it will highlight again next search
+set completeopt=menuone,menu        " don't show preview windows when do completion
                                      
 
 
@@ -57,13 +58,15 @@ nmap <leader>] :TagbarToggle<CR>
 nmap <leader><space> :call whitespace#strip_trailing()<CR>
 "nmap <leader>c <Plug>Kwbd
 "map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " plugin settings
 let g:CommandTMaxHeight=20
+let g:CommandTMaxFiles=100000
+let g:CommandTMaxDepth=25
 "let g:NERDSpaceDelims=1              " seems default value(0) is better
 let g:gitgutter_enabled = 0
 " ZOMG the_silver_searcher is so much faster than ack"
 let g:ackprg = 'ag --nogroup --column'
-
 
 

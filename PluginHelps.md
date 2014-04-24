@@ -15,7 +15,12 @@ In insert mode, you can use CTRL-X CTRL-O to complete.
 
 Completion can be triggered automatically after a '.', '->' or '::'.
 
-Build tags using, :!ctags -R .
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+Use CTRL-N, CTRL-P to navigate in popup menu. Use BS or CTRL-H to delete. See :help popupmenu-keys.
+  
+For the color of popup menu, see :help highligh
+example is :hi Pmenu ctermfg=Cyan  ctermbg=Blue cterm=None guifg=Cyan 
  
 kind of the symbol, possible kinds are :
 
@@ -42,17 +47,6 @@ access, possible values are :
 Note: Global scope completion only works with a non empty base, 
 if you run a completion just after a '::' the completion will fail. 
 
-
-
-  :hi Pmenu      ctermfg=Cyan    ctermbg=Blue cterm=None guifg=Cyan 
-guibg=DarkBlue 
-  :hi PmenuSel   ctermfg=White   ctermbg=Blue cterm=Bold guifg=White 
-guibg=DarkBlue gui=Bold 
-  :hi PmenuSbar                  ctermbg=Cyan            guibg=Cyan 
-  :hi PmenuThumb ctermfg=White                           guifg=White 
-  
-
-:hpopupmenu-keys.
 ###Command-T
 <leader>b :CommandTBuffer<CR>
 <leader>t :CommandT<CR>
