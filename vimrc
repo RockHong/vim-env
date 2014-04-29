@@ -14,7 +14,7 @@ set nocompatible                   " don't bother with vi compatibility
 
 syntax enable                      " enable syntax highlighting
 
-set autoindent
+set autoindent                     " if want to paste something, set noautoindent within vim
 set autoread                       " reload files when changed on disk, i.e. via `git checkout`
 set backspace=2                    " Fix broken backspace in some setups
 set backupcopy=yes                 " see :help crontab
