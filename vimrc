@@ -1,3 +1,8 @@
+" see how to disable plugins here:
+" http://stackoverflow.com/questions/4261785/temporarily-disable-some-plugins-using-pathogen-in-vim
+" disable command-t, we use ctrlp now
+let g:pathogen_disabled = ['command-t']
+
 execute pathogen#infect()
 call    pathogen#helptags()
 syntax on
@@ -46,11 +51,6 @@ set completeopt=menuone,menu        " don't show preview windows when do complet
 let mapleader = ','
 " map <leader>l :Align
 nmap <leader>a :Ack 
-" to quick open buffer
-nmap <leader>b :CommandTBuffer<CR>
-nmap <leader>t :CommandT<CR>
-" refresh first, then open CommandT window
-nmap <leader>T :CommandTFlush<CR>:CommandT<CR>
 nmap <leader>d :NERDTreeToggle<CR>
 " find current file in the tree
 nmap <leader>f :NERDTreeFind<CR>
@@ -60,13 +60,24 @@ nmap <leader><space> :call whitespace#strip_trailing()<CR>
 "map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
+
+
 " plugin settings
-let g:CommandTMaxHeight=20
-let g:CommandTMaxFiles=100000
-let g:CommandTMaxDepth=25
 "let g:NERDSpaceDelims=1              " seems default value(0) is better
 let g:gitgutter_enabled = 0
 " ZOMG the_silver_searcher is so much faster than ack"
 let g:ackprg = 'ag --nogroup --column'
 
+
+
+" *** For CommandT ***
+" to quick open buffer
+"nmap <leader>b :CommandTBuffer<CR>
+"nmap <leader>t :CommandT<CR>
+" refresh first, then open CommandT window
+"nmap <leader>T :CommandTFlush<CR>:CommandT<CR>
+
+"let g:CommandTMaxHeight=20
+"let g:CommandTMaxFiles=100000
+"let g:CommandTMaxDepth=25
 
