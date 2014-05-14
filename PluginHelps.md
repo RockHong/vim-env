@@ -235,6 +235,32 @@ q.......Close the NERDTree window................................|NERDTree-q|
 
 
 ###ack
+*Ack* is like grep, but it will show its searching result in vim's Quickfix window, so that you
+can easily jump to.
+
+The following keyboard shortcuts are available in the quickfix window:
+
+	o                   open file (same as enter).
+	
+	O                   open file and close quickfix window.
+	
+	go                  preview file (open but maintain focus on ack.vim results).
+	
+	t                   open in a new tab.
+	
+	T                   open in new tab silently.
+	
+	h                   open in horizontal split.
+	
+	H                   open in horizontal split silently.
+	
+	v                   open in vertical split.
+	
+	gv                  open in vertical split silently.
+	
+	q                   close the quickfix window.
+
+See more by `help ack`.
 
 ###tagbar
 nmap <leader>] :TagbarToggle<CR>

@@ -21,6 +21,11 @@ It says *solarized* is good color scheme. You can set it as the color scheme of 
 TODO: link.
 
 
+###On Windows
+If have problem with ^M, run the following command (or create a 'win' branch first),
+$ find . -type f -exec dos2unix '{}' \;
+
+
 ##Plugins
 
 ###NERD tree
@@ -51,31 +56,6 @@ This plugin let you complete code using tab. See more by `help supertab`.
 ###Ack
 *Ack* is like grep, but it will show its searching result in vim's Quickfix window, so that you
 can easily jump to.
-
-
-The following keyboard shortcuts are available in the quickfix window:
-
-	o                   open file (same as enter).
-	
-	O                   open file and close quickfix window.
-	
-	go                  preview file (open but maintain focus on ack.vim results).
-	
-	t                   open in a new tab.
-	
-	T                   open in new tab silently.
-	
-	h                   open in horizontal split.
-	
-	H                   open in horizontal split silently.
-	
-	v                   open in vertical split.
-	
-	gv                  open in vertical split silently.
-	
-	q                   close the quickfix window.
-
-See more by `help ack`.
 
 
 *Feel free to build your Vim enviroment.*
