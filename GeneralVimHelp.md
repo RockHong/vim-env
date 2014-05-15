@@ -262,7 +262,7 @@ CommentsEdit
 
  TO DO 
 
-    too wordy, let's make it more concise
+    too wordy, let us make it more concise
     add :help links 
 
 There is an excellent tutorial on using cscope with Vim, from installing to becoming an expert.
@@ -280,5 +280,170 @@ Before editing:
 
 ctags -R
 cscope -R -b
+
+
+
+
+##Edit multiple files
+http://stackoverflow.com/questions/53664/how-to-effectively-work-with-multiple-files-in-vim
+
+###Tabs (introduced in Vim 7)
+:tabe <filepath> you can add a new tab
+
+gvim -p main.plmaintenance.pl will open these two files in tabs.
+
+regular :q or :wq you close a tab. ZZ also can be used instead of :wq
+
+switch between tabs with :tabn and :tabp        
+gt goes to the next tab, and gT goes to the previous tab      
+can jump to any tab by using ngt, where n is the index of the tab (beginning with one).
+
+If you map :tabn and :tabp to your F7/F8 keys you can easily switch between files.
+
+###Not tabs
+To see a list of current buffers, I use  :ls
+:e ../myFile.pl              To open a new file
+you can also use :find which will search a set of paths for you, but you need to customize those paths first.
+
+
+To switch between all open files, I use
+:b myfile
+with enhanced tab completion (still set wild menu).
+
+:b# choses the last visited file, so you can use it to switch quickly between two files.
+:bp previous buffer
+:bn next buffer
+:bn (n a number) move to nth buffer
+:b with tab-key providing auto-completion (awesome !!)
+:bw (buffer wipe, remove a buffer)
+
+you can split your screen by entering the number but using sb instead of just b.
+
+If you want to add multiple files from within vim, use arga[dd]
+:arga foo.txt bar.txt:arga /foo/bar/*.txt:argadd /foo/bar/*
+
+###Session
+you can save sessions of vim
+:mksession! ~/today.ses
+saves the current open files buffers and settings to ~/today.ses. u can load that session by using
+vim -S ~/today.ses
+no hassle of remembering where u left of the yesterday ;)
+
+
+###split windows
+:sp <filepath>
+
+Starting vim with a -o or -O flag opens each file in its own split.
+
+Ctrl-W w to switch between open windows, and Ctrl-W h (or j or k or l) to navigate through open windows.
+Ctrl-W c to close the current window, and Ctrl-W o to close all windows except the current one.
+
+
+##Movement
+fx, find forward for x
+Fx, find backward for x
+';' repeating the last f or t command.
+
+N% – Go to the Nth percentage line of the file.
+
+* go to next place of the word under cursor
+# like *, but reverse
+
+###mark
+m{a-zA-Z}               Set mark {a-zA-Z} at cursor position
+'{a-z}  `{a-z}          Jump to the mark {a-z} in the current buffer
+'{A-Z0-9}  `{A-Z0-9}    To the mark {A-Z0-9} in the file where it was set
+:marks
+'0 will cause Vim to jump to the 0 mark, which is a "special mark" that represents the last file edited when Vim was exited.
+'.  `.                  To the position where the last change was made. 
+'<  `<                  To the first line or character of the last selected
+'>  `>                  To the last line or character of the last selected
+''  ``                  To the position before the latest jump, or where the
+                        last "m'" or "m`" command was given.
+
+##Editing
+### lower case and upper case
+gu{motion}              Make {motion} text lowercase.
+gU{motion}              Make {motion} text uppercase.
+u   Lowercase the visually-selected text.
+gUU Change the current line to uppercase (same as VU).
+guu Change the current line to lowercase (same as Vu).
+g~              g~{motion}      2  swap case for Nmove text
+g~$ Toggle case of all characters to end of line.
+g~~ Toggle case of the current line (same as V~).
+
+##For coding
+###%  
+(not need to put cursor exactly on the 'item')   see :help %
+Find the next item in this line after or under the
+cursor and jump to its match. inclusive motion.
+Items can be:
+([{}])          parenthesis or (curly/square) brackets
+                (this can be changed with the
+                'matchpairs' option)
+/* */           start or end of C-style comment
+#if, #ifdef, #else, #elif, #endif
+                C preprocessor conditionals (when the
+                cursor is on the # or no ([{
+                following)
+...
+
+###>> and << 
+shift code. :help >>
+
+###gd 
+Goto local Declaration. When the cursor is on a local variable.
+
+###K 
+Run a program to lookup the keyword under the cursor. default is to launch 'man'.
+can use '2K' to look for the specified section of man.
+
+###]p
+like p, but consider code indent
+
+
+##Copy and paste
+###normal mode
+d{motion}, cut, for example, *dfS* cuts from current cursor to S
+y{motion}, copy/yank; *ye*, till the end of work; *y2/foo*, till the 2nd 'foo'
+c{motion}, like d{motion}, but enter insert mode
+dd, *2dd* is ok
+yy, Y also do same; *0y$* also so same; 
+cc,
+D, for cursor to the end of line
+C, just like D, but enter insert mode
+x, cut the char under the cursor
+s, like x, but enter insert mode
+
+###insert mode
+hit CTRL-R {register}. CTRL-R * will insert in the contents of the clipboard 
+and CTRL-R " (the unnamed register) inserts the the last delete or yank.
+
+###System's clipboard
+The "* and "+ registers are for the system's clipboard (:help registers). 
+Depending on your system, they may do different things.
+
+###registers
+"kyy , "kp
+"ayy — Replace the contents of register a with the current line.
+"Ayy — Append the current line to register a.
+:registers
+Unnamed register,
+register 0 will always contain the most recently yanked text, but never deleted text;
+The registers 1 through 9 are for deleted text
+small delete register ".
+black hole register, referenced with "_
+register "% contains the name of the current buffer’s file
+the "# register contains the name of the alternate buffer’s file.
+register ": contains the most recently executed : command
+register / contains the most recent search pattern
+
+
+
+
+
+
+
+
 
 
