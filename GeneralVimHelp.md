@@ -1,3 +1,6 @@
+## Help in vim
+use :ctrl-] to follow the link in vim help doc.
+
 ## Browsing programs with tags
 
 http://vim.wikia.com/wiki/Browsing_programs_with_tags
@@ -360,6 +363,32 @@ m{a-zA-Z}               Set mark {a-zA-Z} at cursor position
 '>  `>                  To the last line or character of the last selected
 ''  ``                  To the position before the latest jump, or where the
                         last "m'" or "m`" command was given.
+
+###jump
+go to file under cursor,
+    1):gf , open in the same window
+    2):<c-w>f , open in a new window
+    3):<c-w>gf , open in a new tab
+
+When writing a program, it is helpful to set the 'path' option to list the directories with your include files. 
+If there are several files in your 'path' that match the name under the cursor, gf opens the first, while 2gf opens the second
+Names containing spaces, you can visually select the name (including the spaces), then type gf
+
+go back to previous file
+1) use :ctrl-6, it toggles between two files. same as ":e #"
+2) navigate in jump list, use :ctrl-o (can add [count]) for backward, use <tab> or ctrl-i(can add [count]) for forward
+
+:jumps
+show jump list. the one begin with '>' is current pos. the number can be used in [count]ctrl-o/i
+what will add into jump list, http://usevim.com/2013/02/15/vim-101-jumps/
+1) Freely jumping around a file. Example: G
+2) Jumping based on the window size. Example: M
+3) Text block jumps. Examples: (, ), {, }
+and, Searching (/ and ?) and (n, N)
+
+:changes
+show change list. this list remember the positions where changes happen. use :g; and :g, to go back and forth. 
+
 
 ##Editing
 ### lower case and upper case
