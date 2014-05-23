@@ -389,6 +389,9 @@ and, Searching (/ and ?) and (n, N)
 :changes
 show change list. this list remember the positions where changes happen. use :g; and :g, to go back and forth. 
 
+###search
+search word under cursor, press '*', (you can also add [count])
+
 
 ##Editing
 ### lower case and upper case
