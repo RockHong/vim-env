@@ -27,6 +27,8 @@ set clipboard=unnamed              " yank and paste with the system clipboard
 set expandtab                      " expand tabs to spaces
 set laststatus=2                   " always show statusline
 "set encoding=utf-8
+au BufEnter * :set nobomb               " no bomb for the file
+au BufEnter * :set fileencoding=utf-8   " set file encoding to utf-8
 "set list                           " show trailing whitespace
 "set listchars=tab:▸\ ,trail:▫
 "set number                         " show line numbers
