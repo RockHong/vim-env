@@ -471,6 +471,33 @@ register ": contains the most recently executed : command
 register / contains the most recent search pattern
 
 
+##macro
+
+see all macros
+:reg
+
+do a macro
+@a 
+'a' is macro name
+5@a
+do 5 times
+
+record a macro
+qahjklq
+'q' starts recording, 'a' is the name, 'hjkl' is the operation, 'q' means ending
+
+##setting
+:set textwidth? to show the value of textwidth.
+:verbose set textwidth? to show where this value was last set.
+:set optiont& reverts option to its default value.
+:set autoindent! inverts the option. autoindent becomes noautoindent.
+For number or string options, :set option is equivalent to :set option?
+
+
+##others
+###increase a number
+ctrl-a
+http://stackoverflow.com/questions/9848069/vim-columnvise-increment-inside-and-outside
 
 
 
