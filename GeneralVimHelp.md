@@ -493,6 +493,16 @@ qahjklq
 :set autoindent! inverts the option. autoindent becomes noautoindent.
 For number or string options, :set option is equivalent to :set option?
 
+what is different between let and set
+http://stackoverflow.com/questions/9990219/vim-whats-the-difference-between-let-and-set
+:set is for setting options, :let for assigning a value to a variable.
+
+
+##highlight
+good doc, http://www.sbf5.com/~cduan/technical/vi/vi-4.shtml
+example, make comments green
+:hi Comment ctermfg=green
+
 
 ##others
 ###increase a number

@@ -30,7 +30,10 @@ set encoding=utf-8                 " encode for reading
 set fileencoding=utf-8             " encode for writing
 set nobomb 
 " not use au to set encoding, it's a little annoying when start vim without
-" specify a particular file
+" specify a particular file TODO: it says that using "au ..." vim will convert
+" the file which already has bomb or no-utf-8 encoding into utf-8 without
+" bomb, and using "set ..." doesn't have this effect. And other people says
+" that he has not see any annoying behavior of vim..
 "au BufEnter * :set nobomb               " no bomb for the file
 "au BufEnter * :set fileencoding=utf-8   " set file encoding to utf-8
 "set list                           " show trailing whitespace
@@ -75,6 +78,8 @@ let g:gitgutter_enabled = 0
 let g:ackprg = 'ag --nogroup --column'
 
 
+" *** For ctrlp ***
+let g:ctrlp_max_files = 0
 
 " *** For CommandT ***
 " to quick open buffer
