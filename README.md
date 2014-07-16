@@ -56,6 +56,8 @@ This plugin let you complete code using tab. See more by `help supertab`.
 ###Ack
 *Ack* is like grep, but it will show its searching result in vim's Quickfix window, so that you
 can easily jump to.
-
+NOTE: in vimrc, set Ack to use 'ag' as engine, because it's said ag is much faster than ack.
+See https://github.com/ggreer/the_silver_searcher , ag also privode a tailored ack, called ag.vim.
+So you have to install ag first to use Ack.
 
 *Feel free to build your Vim enviroment.*
