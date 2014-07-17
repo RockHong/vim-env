@@ -58,25 +58,30 @@ set completeopt=menuone,menu        " don't show preview windows when do complet
 
 " keyboard shortcuts
 let mapleader = ','
+" use <space> to scroll down
+nmap <space> <C-f>
+nmap <leader><space> :call whitespace#strip_trailing()<CR>
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 " map <leader>l :Align
-nmap <leader>a :Ack 
+"nmap <leader>c <Plug>Kwbd
+"map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+let g:gitgutter_enabled = 0
+
+" plugin settings
+" *** For NERDTree ***
 nmap <leader>d :NERDTreeToggle<CR>
 " find current file in the tree
 nmap <leader>f :NERDTreeFind<CR>
-nmap <leader>] :TagbarToggle<CR>
-nmap <leader><space> :call whitespace#strip_trailing()<CR>
-"nmap <leader>c <Plug>Kwbd
-"map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
-
-
-" plugin settings
 "let g:NERDSpaceDelims=1              " seems default value(0) is better
-let g:gitgutter_enabled = 0
+
+" *** For Ack ***
+nmap <leader>a :Ack 
 " ZOMG the_silver_searcher is so much faster than ack"
 let g:ackprg = 'ag --nogroup --column'
 
+" *** For TagbarToggle ***
+nmap <leader>] :TagbarToggle<CR>
 
 " *** For ctrlp ***
 let g:ctrlp_max_files = 0

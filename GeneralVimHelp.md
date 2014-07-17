@@ -352,6 +352,12 @@ N% – Go to the Nth percentage line of the file.
 * go to next place of the word under cursor
 # like *, but reverse
 
+### word motions
+:help word-motions
+w    words forward, seems go to the beginning of next word
+e    forword to the end of word, seems got the end of current or next word
+b    words backward
+
 ###mark
 m{a-zA-Z}               Set mark {a-zA-Z} at cursor position
 '{a-z}  `{a-z}          Jump to the mark {a-z} in the current buffer
@@ -403,6 +409,16 @@ guu Change the current line to lowercase (same as Vu).
 g~              g~{motion}      2  swap case for Nmove text
 g~$ Toggle case of all characters to end of line.
 g~~ Toggle case of the current line (same as V~).
+
+##select
+###text select
+This is a series of commands that can only be used while in Visual mode or after an operator. 
+aw    "a word", including leading or trailing white space.
+iw    "inner word"
+aW and iW for WORD, see :help WORD
+yiw   yank inner word
+y2iw
+viw   visual select an inner word, then you can delete or yank
 
 ##For coding
 ###%  
@@ -486,7 +502,7 @@ record a macro
 qahjklq
 'q' starts recording, 'a' is the name, 'hjkl' is the operation, 'q' means ending
 
-##setting
+##setting and variable
 :set textwidth? to show the value of textwidth.
 :verbose set textwidth? to show where this value was last set.
 :set optiont& reverts option to its default value.
@@ -496,6 +512,13 @@ For number or string options, :set option is equivalent to :set option?
 what is different between let and set
 http://stackoverflow.com/questions/9990219/vim-whats-the-difference-between-let-and-set
 :set is for setting options, :let for assigning a value to a variable.
+
+print environment variable
+:echo $PATH
+:echo $MYVIMRC
+print variable
+:let myvar = $MYVIMRC
+:echo myvar
 
 
 ##highlight
@@ -509,6 +532,13 @@ example, make comments green
 ctrl-a
 http://stackoverflow.com/questions/9848069/vim-columnvise-increment-inside-and-outside
 
+###reload vimrc
+if you are editing it, reload it with
+:so %
+% stands for current file name, see :help current-file
+or more general way
+:so $MYVIMRC
+so stands for source
 
 
 
