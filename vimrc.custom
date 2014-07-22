@@ -1,0 +1,1 @@
+nmap <leader>chong :cd /cygdrive/c/Hong<CR>

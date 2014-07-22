@@ -97,3 +97,9 @@ let g:ctrlp_max_files = 0
 "let g:CommandTMaxFiles=100000
 "let g:CommandTMaxDepth=25
 
+let vimrc_cus = $HOME . "/.vimrc.custom"
+if filereadable(vimrc_cus)
+  " simply "source vimrc_cus" not work. it seems source will think vimrc_cus
+  " as a file name 
+  exec 'source ' . fnameescape(vimrc_cus)
+endif
