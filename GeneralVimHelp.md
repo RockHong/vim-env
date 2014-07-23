@@ -18,6 +18,13 @@ using tags files (for the details, see :help tagsrch.txt).
 
 
 ### Using tags
+http://courses.cs.washington.edu/courses/cse451/10au/tutorials/tutorial_ctags.html
+Ctrl-]            Jump to the tag underneath the cursor
+:ts <tag> <RET>   Search for a particular tag
+:tn               Go to the next definition for the last tag
+:tp               Go to the previous definition for the last tag
+:ts               List all of the definitions of the last tag
+Ctrl-t            Jump back up in the tag stack
 
 #### Jumping to a tag
 
@@ -150,7 +157,7 @@ There are several ways to go through a list of all tags matching a pattern.
     If you have the 'wildmenu' option set, then you can press the <Tab> key to 
     display a list of all the matching tags in the status bar. You can use the 
     arrow keys to move between the tags and then use the Enter key to select a tag.
-    If you don't have the 'wildmenu' option set, you can still use the <Tab> key to browse through the list of matching tags. 
+    If you do not have the 'wildmenu' option set, you can still use the <Tab> key to browse through the list of matching tags. 
 
 Help: tag-regexp, wildmenu
 
@@ -302,6 +309,8 @@ gt goes to the next tab, and gT goes to the previous tab
 can jump to any tab by using ngt, where n is the index of the tab (beginning with one).
 
 If you map :tabn and :tabp to your F7/F8 keys you can easily switch between files.
+
+if you already have existing buffers, you can :tabnew, and in the new tab enter :b2 , for example.
 
 ###Not tabs
 To see a list of current buffers, I use  :ls
@@ -540,6 +549,13 @@ or more general way
 :so $MYVIMRC
 so stands for source
 
+### input word under cursor in command line
+http://stackoverflow.com/questions/48642/how-do-i-specify-the-word-under-the-cursor-on-vims-commandline
+in command-line mode, ctrl+r ctrl+w will insert the word under cursor
+see :help c_CTRL-R for a listing of all the other special registers
+
+### keyboard mapping, for example what <CR> means in keyboard
+:help key-notation
 
 
 
