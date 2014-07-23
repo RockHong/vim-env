@@ -521,7 +521,7 @@ print variable
 :echo myvar
 
 
-##highlight
+##syntax highlight
 good doc, http://www.sbf5.com/~cduan/technical/vi/vi-4.shtml
 example, make comments green
 :hi Comment ctermfg=green

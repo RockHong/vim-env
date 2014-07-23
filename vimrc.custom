@@ -1,1 +1,4 @@
 nmap <leader>chong :cd /cygdrive/c/Hong<CR>
+
+" green is better on black background
+hi Comment ctermfg=green
