@@ -361,6 +361,10 @@ N% – Go to the Nth percentage line of the file.
 * go to next place of the word under cursor
 # like *, but reverse
 
+0 go to beginning of the line
+^ go to the first no-whitespace char in the line      
+g_  go to the last no-whitspace char in the line
+
 ### word motions
 :help word-motions
 w    words forward, seems go to the beginning of next word
@@ -534,6 +538,10 @@ print variable
 good doc, http://www.sbf5.com/~cduan/technical/vi/vi-4.shtml
 example, make comments green
 :hi Comment ctermfg=green
+
+turn on/off syntax highlight
+:syntax on
+:syntax off
 
 
 ##others
