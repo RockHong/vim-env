@@ -78,8 +78,8 @@ nmap <leader>f :NERDTreeFind<CR>
 " *** For Ack ***
 nmap <leader>a :Ack 
 " ZOMG the_silver_searcher is so much faster than ack
-" er.. ack has more options then ag though. so keep use ack
-" let g:ackprg = 'ag --nogroup --column'
+" er.. ack has more options then ag. but ag works in Windows
+let g:ackprg = 'ag --nogroup --column'
 
 " *** For TagbarToggle ***
 nmap <leader>] :TagbarToggle<CR>

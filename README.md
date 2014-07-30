@@ -19,7 +19,9 @@ tags/symbols for C++ project, ctags uses options in the file `ctags`.
 It says *solarized* is good color scheme. You can set it as the color scheme of your terminal.
 TODO: link.
 
-###On Windows
+###On Windows 7
+Put this repository into C:\Users\user_name, and rename to vimfiles. Also put vimrc there, and rename it to _vimrc. 
+
 If have problem with ^M, run the following command (or create a 'win' branch first),
 $ find . -type f -exec dos2unix '{}' \;
 
