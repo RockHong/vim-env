@@ -1,4 +1,13 @@
-nmap <leader>chong :cd /cygdrive/c/Hong<CR>
+nmap <leader>cho :cd /cygdrive/c/Hong<CR>
+nmap <leader>cgi :cd /cygdrive/c/git<CR>
 
 " green is better on black background
 hi Comment ctermfg=green
+
+" set g:ackprg back to ack, because ack can use --html
+" why set g:ackprg first in vimrc, and then again here?
+" because vimrc is shared between vim and gvim, because ack is just perl
+" script, windows will fail to launch vim's ack plugin. so we set
+" g:ackprg using ag in vimrc to let ack plugin work in Windows.
+" then set g:ackprg back to use ack here
+let g:ackprg = 'ack -H --nocolor --nogroup --column'
