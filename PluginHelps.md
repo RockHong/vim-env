@@ -48,19 +48,19 @@ Note: Global scope completion only works with a non empty base,
 if you run a completion just after a '::' the completion will fail. 
 
 ###CtrlP
-It's said CtrlP it's better than Command-T, from http://www.bestofvim.com/plugin/ctrl-p/ and
-http://pyjamacoder.com/2013/04/25/getting-fuzzy-with-ctrlp/. So, let's try it.
+It is that said CtrlP it is better than Command-T, from http://www.bestofvim.com/plugin/ctrl-p/ and
+http://pyjamacoder.com/2013/04/25/getting-fuzzy-with-ctrlp/. So, let us try it.
 
 (Below is just copy and paste from http://kien.github.io/ctrlp.vim/)        
 Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 
 Built-in Most Recently Used (MRU) files monitoring and search.
-Built-in project's root finder.
+Built-in project root finder.
 Open multiple files at once.
 Create new files and directories.
 Execute Ex commands on an opening file (jump to a line, to a string or do anything).
 Optional cross-sessions caching and history allow for fast initialization.
-Mappings and usage conform to Vim's conventions.
+Mappings and usage conform to Vim conventions.
 
 Basic Usage:
 Run :CtrlP or :CtrlP [starting-directory] to invoke CtrlP in find file mode.
@@ -77,7 +77,7 @@ Press <c-d> to switch to filename search instead of full path.
 Press <c-r> to switch to regexp mode.
 Use <c-j>, <c-k> or the arrow keys to navigate the result list.
 Use <c-t> or <c-v>, <c-x> to open the selected entry in a new tab or in a new split.
-Use <c-n>, <c-p> to select the next/previous string in the prompt's history.
+Use <c-n>, <c-p> to select the next/previous string in the prompt history.
 Use <c-y> to create a new file and its parent directories.
 Use <c-z> to mark/unmark multiple files and <c-o> to open them.
 
@@ -148,12 +148,12 @@ The following is also available on terminals which support it:
  
 
 
-Vim's |'wildignore'| setting is used to determine which files should be
+Vim |'wildignore'| setting is used to determine which files should be
 excluded from listings    
 :set wildignore+=*.o,*.obj,.git
 
 
-If you want to influence Command-T's file exclusion behavior without
+If you want to influence file exclusion of Command-T behavior without
 changing your global |'wildignore'| setting, you can use the |g:CommandTWildIgnore| 
 
 TIPS     
@@ -235,7 +235,7 @@ q.......Close the NERDTree window................................|NERDTree-q|
 
 
 ###ack
-*Ack* is like grep, but it will show its searching result in vim's Quickfix window, so that you
+*Ack* is like grep, but it will show its searching result in vim Quickfix window, so that you
 can easily jump to.
 
 The following keyboard shortcuts are available in the quickfix window:
@@ -262,6 +262,15 @@ The following keyboard shortcuts are available in the quickfix window:
 
 See more by `help ack`.
 
+help doc of ack (the perl script)
+http://beyondgrep.com/documentation/    simple doc
+http://beyondgrep.com/documentation/ack-2.12-man.html#defining_your_own_types   more detail
+
+print all known type
+$ ack --help-types
+
+
+
 ###tagbar
 nmap <leader>] :TagbarToggle<CR>
 
@@ -272,7 +281,7 @@ Sorting~
 by pressing the "s" key
 
 Folding~
-Mappings similar to Vim's built-in ones are provided. Folds can
+Mappings similar to Vim built-in ones are provided. Folds can
 also be opened and closed by clicking on the fold icon with the mouse.
 
 Displaying the prototype of a tag~
@@ -285,7 +294,7 @@ The following mappings are valid in the Tagbar window:
 
 <F1>/?        Display key mapping help.
                 Map option: tagbar_map_help
-<CR>/<Enter>  Jump to the tag under the cursor. Doesn't work for pseudo-tags
+<CR>/<Enter>  Jump to the tag under the cursor. Does not work for pseudo-tags
               or generic headers.
                 Map option: tagbar_map_jump
 p             Jump to the tag under the cursor, but stay in the Tagbar window.

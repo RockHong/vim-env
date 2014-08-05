@@ -1,0 +1,6 @@
+# put this file into ~, or add a symbolic link there
+
+# add more type, show all known type by "$ ack --help-types"
+--type-set=md:ext:md
+--type-set=txt:ext:txt
+
