@@ -484,6 +484,11 @@ and CTRL-R " (the unnamed register) inserts the the last delete or yank.
 The "* and "+ registers are for the system's clipboard (:help registers). 
 Depending on your system, they may do different things.
 
+copy system clipboard into vim
+CTRL-R, then input *  (test in windows)
+copy vim content into system clipboard
+select content, "*y   (test in windows)
+
 ###registers
 "kyy , "kp
 "ayy — Replace the contents of register a with the current line.
@@ -520,6 +525,7 @@ qahjklq
 :verbose set textwidth? to show where this value was last set.
 :set optiont& reverts option to its default value.
 :set autoindent! inverts the option. autoindent becomes noautoindent.
+:setlocal , only affect current buffer or window.
 For number or string options, :set option is equivalent to :set option?
 
 what is different between let and set
@@ -565,8 +571,40 @@ see :help c_CTRL-R for a listing of all the other special registers
 ### keyboard mapping, for example what <CR> means in keyboard
 :help key-notation
 
+### view currently mapped keys
+:nmap
+:vmap
+...
+see :help map
 
+:verbose map which shows where the mapping(s) was defined (see :help map-verbose)
 
+### close a buffer without quit vim
+use :bdelete or :bd, the full expression is 
+:[N]bd[elete][!]  
+:bd[elete][!] [N]
+without N, default is current buffer.
 
+### disable automatic comment or indent when paste something into vim
+:set formatoptions-=cro
+see :help fo-table
+http://superuser.com/questions/271023/vim-can-i-disable-continuation-of-comments-to-the-next-line
+
+if want to put it in vimrc, please use bellow line,
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+
+it is said that C file plugin in vim will overwrite formatoptions option after loading vimrc.
+http://stackoverflow.com/questions/6076592/vim-set-formatoptions-being-lost
+
+if vim is opened in terminal, you use :set paste, then vim will do no formatting at all(see Note of :help fo-table).
+however :set paste may have some problem in GUI. In GUI, default is "nopaste". see :help paste
+
+anywhere, what is the usage of formatoptions?
+it is useful when reformat text. when reformatting, vim will consider the value of formatoptions
+command to reformat:
+gq
+=
+==
+http://www.cs.swarthmore.edu/help/vim/reformatting.html
 
 

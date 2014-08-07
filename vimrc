@@ -53,6 +53,9 @@ set wildmode=longest,list,full      " TODO test
                                      " disable it, so that double-clicking a word can copy it and paste it in terminal
 set hlsearch                        " highlight searching word. you can remove the highlight by :noh, it will highlight again next search
 set completeopt=menuone,menu        " don't show preview windows when do completion
+
+" to avoid annoying auto-format when paste text into vim 
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
                                      
 
 
@@ -70,7 +73,12 @@ let g:gitgutter_enabled = 0
 
 " plugin settings
 " *** For NERDTree ***
+" NERDTreeToggle not change correspondingly when current working directory of vim
+" changes
 nmap <leader>d :NERDTreeToggle<CR>
+" open a fresh NERD tree. if no argument given, oprn tree for current working
+" directory
+nmap <leader>dd :NERDTree 
 " find current file in the tree
 nmap <leader>f :NERDTreeFind<CR>
 "let g:NERDSpaceDelims=1              " seems default value(0) is better

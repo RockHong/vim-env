@@ -233,6 +233,11 @@ q.......Close the NERDTree window................................|NERDTree-q|
 |'NERDTreeShowHidden'| 
 |'NERDTreeWinSize'| 
 
+add a file/directory under a dir    
+select that dir, press m to show up menu, press a to 'add child node', then input
+file or directory name. NERDTree will show help to tell you what the diff between
+dir name and file name.
+
 
 ###ack
 *Ack* is like grep, but it will show its searching result in vim Quickfix window, so that you
