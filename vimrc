@@ -94,6 +94,7 @@ nmap <leader>] :TagbarToggle<CR>
 
 " *** For ctrlp ***
 let g:ctrlp_max_files = 0
+nmap <leader>p :CtrlPBuffer<CR>
 
 " *** For CommandT ***
 " to quick open buffer

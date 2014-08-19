@@ -350,6 +350,17 @@ Starting vim with a -o or -O flag opens each file in its own split.
 Ctrl-W w to switch between open windows, and Ctrl-W h (or j or k or l) to navigate through open windows.
 Ctrl-W c to close the current window, and Ctrl-W o to close all windows except the current one.
 
+###Window 
+:split filename , split window to open a file
+:vsplit filename , vertical split
+:sview filename , read-only
+ctrl-w- , decrease size by one line 
+ctrl-w+ , increase size
+10ctrl-w+ , increase 10 lines
+ctrl-w_ , maximize current window
+:hide , close current window, but buffer is not deleted
+:only , keep only current window open, others close
+
 
 ##Movement
 fx, find forward for x
@@ -410,6 +421,8 @@ show change list. this list remember the positions where changes happen. use :g;
 
 ###search
 search word under cursor, press '*', (you can also add [count])
+
+search selected text: go visual mode, select text, yank, input / ctrl-r 0
 
 
 ##Editing
@@ -585,6 +598,16 @@ use :bdelete or :bd, the full expression is
 :bd[elete][!] [N]
 without N, default is current buffer.
 
+close all buffers, :1,100bd , if 100 is not big enough, just increase it, for example 1000
+it will also delete your NERDTreeBuffer, run :NERDTree again
+
+another way, :bufdo bdelete , The :bufdo command lets you execute a command on all buffers.
+and it does not delete NERDTreeBuffer, but it make NERDTree look strange (very big)..
+
+:%bd(elete) , also close all buffers. what % means here??
+
+close all buffers but current one, make some change before run :1,100bd, vim not close modified buffer
+
 ### disable automatic comment or indent when paste something into vim
 :set formatoptions-=cro
 see :help fo-table
@@ -592,6 +615,8 @@ http://superuser.com/questions/271023/vim-can-i-disable-continuation-of-comments
 
 if want to put it in vimrc, please use bellow line,
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+
+and, also do :set noautoindent
 
 it is said that C file plugin in vim will overwrite formatoptions option after loading vimrc.
 http://stackoverflow.com/questions/6076592/vim-set-formatoptions-being-lost
