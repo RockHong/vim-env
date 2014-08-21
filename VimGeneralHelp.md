@@ -424,6 +424,8 @@ search word under cursor, press '*', (you can also add [count])
 
 search selected text: go visual mode, select text, yank, input / ctrl-r 0
 
+clear search highlight, :set nohlsearch , or :nohl , or :noh
+
 
 ##Editing
 ### lower case and upper case

@@ -1,22 +1,6 @@
-    1  which vim
-    2  cd
-    3  ls
-    4  ls -a
-    5  ls
-    6  ls .vim
-    7  cd
-    8  cd tmp
-    9  cd
-   10  mkdir tmp
-   11  cd tmp
-   12  ls
-   13  vim xxx.xxx
-   14  cd 
    15  vim --version
    16  vim --version | grep ruby
    17  vim --version | grep python
-   18  ls
-   19  cd
    20  mkdir .vim
    21  ls
    22  cd .vim
@@ -63,8 +47,6 @@
    63  git add README.md 
    64  git commit -m 'add readme.md'
    65  git log
-   66  git config --global user.name 'Hong'
-   67  git config --global user.email hongzhihua@gmail.com
    68  git log
    69  ls
    70  vim README.md 
@@ -148,7 +130,6 @@
    43  ls .ssh
    44  cd .ssh/
    45  ls
-   46  ssh-keygen -t rsa -C "hongzhihua@gmail.com"
    47  ls
    48  cat id_rsa.pub
    49  which ls
@@ -189,8 +170,6 @@
    84  git add README.md 
    85  git commit -m 'add readme.md'
    86  git log
-   87  git config --global user.name 'Hong'
-   88  git config --global user.email hongzhihua@gmail.com
    89  git log
    90  ls
    91  vim README.md 
@@ -232,7 +211,6 @@
   127  head history.md 
   128  git status
   129  git commit -m 'add history'
-  130  git remote add origin git@github.com:RockHong/vim-env.git
   131  git push -u origin master
   132  git status
   133  cd
@@ -342,7 +320,6 @@
    43  ls .ssh
    44  cd .ssh/
    45  ls
-   46  ssh-keygen -t rsa -C "hongzhihua@gmail.com"
    47  ls
    48  cat id_rsa.pub
    49  which ls
@@ -383,8 +360,6 @@
    84  git add README.md 
    85  git commit -m 'add readme.md'
    86  git log
-   87  git config --global user.name 'Hong'
-   88  git config --global user.email hongzhihua@gmail.com
    89  git log
    90  ls
    91  vim README.md 
@@ -426,7 +401,6 @@
   127  head history.md 
   128  git status
   129  git commit -m 'add history'
-  130  git remote add origin git@github.com:RockHong/vim-env.git
   131  git push -u origin master
   132  git status
   133  cd
@@ -510,7 +484,6 @@
   211  which ctags
   212  zypper search ctags
   213  ls
-  214  git clone git@github.com:RockHong/folly.git
   215  ls
   216  cd
   217  ls
