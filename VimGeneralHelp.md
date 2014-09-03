@@ -337,9 +337,16 @@ If you want to add multiple files from within vim, use arga[dd]
 ###Session
 you can save sessions of vim
 :mksession! ~/today.ses
-saves the current open files buffers and settings to ~/today.ses. u can load that session by using
+saves the current open files buffers and settings to ~/today.ses. 
+(NERDTree has some problem with session save, at least on gvim on windows. so close NERDTree first)
+
+u can load that session by using
 vim -S ~/today.ses
 no hassle of remembering where u left of the yesterday ;)
+
+or,
+load session
+:source session-file
 
 
 ###split windows
@@ -490,6 +497,13 @@ D, for cursor to the end of line
 C, just like D, but enter insert mode
 x, cut the char under the cursor
 s, like x, but enter insert mode
+
+copy whole text in a buffer,
+gg"*yG    In Windows, + and * are equivalent
+:%y+      % to refer the next command to work on all the lines
+do "+y[movement]. So, gg"+yG
+http://stackoverflow.com/questions/1620018/copy-all-the-lines-to-clipboard
+
 
 ###insert mode
 hit CTRL-R {register}. CTRL-R * will insert in the contents of the clipboard 
