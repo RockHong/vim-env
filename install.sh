@@ -27,6 +27,7 @@ fi
 ln -s $CURRENT_DIR/vimrc ~/.vimrc
 ln -s $CURRENT_DIR/gvimrc ~/.gvimrc
 #ln -s $CURRENT_DIR/ctags ~/.ctags
+ln -s $CURRENT_DIR/vimrc.custom ~/.vimrc.custom
 
 # create symbolic link for .vim directory in home if needed
 if [ $CURRENT_DIR != $HOME_DIR/.vim ];then

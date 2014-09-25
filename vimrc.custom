@@ -1,5 +1,5 @@
-nmap <leader>cho :cd /cygdrive/c/Hong<CR>
-nmap <leader>cgi :cd /cygdrive/c/git<CR>
+" nmap <leader>cho :cd /cygdrive/c/Hong<CR>
+" nmap <leader>cgi :cd /cygdrive/c/git<CR>
 
 " green is better on black background
 hi Comment ctermfg=green
