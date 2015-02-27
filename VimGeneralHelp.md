@@ -383,11 +383,19 @@ N% – Go to the Nth percentage line of the file.
 ^ go to the first no-whitespace char in the line      
 g_  go to the last no-whitspace char in the line
 
+:20 go to the 20th line, 20gg does the same
+
 ### word motions
 :help word-motions
 w    words forward, seems go to the beginning of next word
+     w, first non-alphanumeric. W, white space delimited
 e    forword to the end of word, seems got the end of current or next word
 b    words backward
+
+)    beginning of next sentence (delimeted by ".", "?" or "!")
+(    beginning of current sentence
+
+%    see "for coding" section
 
 ###mark
 m{a-zA-Z}               Set mark {a-zA-Z} at cursor position
@@ -426,12 +434,22 @@ and, Searching (/ and ?) and (n, N)
 :changes
 show change list. this list remember the positions where changes happen. use :g; and :g, to go back and forth. 
 
-###search
+## search
 search word under cursor, press '*', (you can also add [count])
 
 search selected text: go visual mode, select text, yank, input / ctrl-r 0
 
 clear search highlight, :set nohlsearch , or :nohl , or :noh
+
+/\<search_string\>    same as '*'
+
+fx    Move cursor to first occurance of letter "x" after the cursor but in the same line
+3fx
+;     Go to next occurance in line
+FX    backwards
+;     previous occurance
+tx
+;
 
 
 ##Editing
@@ -444,6 +462,19 @@ guu Change the current line to lowercase (same as Vu).
 g~              g~{motion}      2  swap case for Nmove text
 g~$ Toggle case of all characters to end of line.
 g~~ Toggle case of the current line (same as V~).
+
+### delete
+dw    delete word
+4dw
+d)    delete to end of sentence
+dfx   to first occurrence of 'x'
+d/cat to next occurrence of 'cat' (not including 'cat')
+
+x     delete character at cursor
+
+### increase, decrease
+ctrl-a    Increment number under the cursor
+ctrl-x    Decrement number under the cursor
 
 ##select
 ###text select
@@ -484,6 +515,20 @@ can use '2K' to look for the specified section of man.
 ###]p
 like p, but consider code indent
 
+:set showmatch     shows matching ")" and "}"
+:set noshowmatch
+
+:set list      Dislays these hidden characters
+:set nolist
+
+###syntax highlight
+good doc, http://www.sbf5.com/~cduan/technical/vi/vi-4.shtml
+example, make comments green
+:hi Comment ctermfg=green
+
+turn on/off syntax highlight
+:syntax on
+:syntax off
 
 ##Copy and paste
 ###normal mode
@@ -518,6 +563,11 @@ CTRL-R, then input *  (test in windows)
 copy vim content into system clipboard
 select content, "*y   (test in windows)
 
+###copy & paste on os x
+can use pbcopy and pbpaste
+:1,50!pbcopy
+:r !pbpaste
+
 ###registers
 "kyy , "kp
 "ayy — Replace the contents of register a with the current line.
@@ -532,6 +582,31 @@ register "% contains the name of the current buffer’s file
 the "# register contains the name of the alternate buffer’s file.
 register ": contains the most recently executed : command
 register / contains the most recent search pattern
+
+## range
+The last line in the file can be referenced by the "$" sign.
+The entire file may be referenced by the block "1,$" or "%"
+The current line is referred to as "."
+A block of text may be referred to by its line numbers or its marked lines. i.e. 5,38 or 't,'b 
+
+
+## command-line mode
+:.,.+22!sort
+sort the current and 22 following lines. same as !22jsort
+
+:12,35w smallfile<Return>
+write the contents of the lines numbered 12 through 35 to a new file named smallfile
+
+:[range]w 
+only write the lines in [range]
+
+:!pwd 
+
+:r filename     include the contents of an external file
+:r !date
+
+:5,38 w newfile 
+'t,'bw >> filename    Append a marked block to an existing file
 
 
 ##macro
@@ -569,14 +644,6 @@ print variable
 :echo myvar
 
 
-##syntax highlight
-good doc, http://www.sbf5.com/~cduan/technical/vi/vi-4.shtml
-example, make comments green
-:hi Comment ctermfg=green
-
-turn on/off syntax highlight
-:syntax on
-:syntax off
 
 
 ##others
@@ -649,3 +716,6 @@ gq
 http://www.cs.swarthmore.edu/help/vim/reformatting.html
 
 
+###reference
+http://www.fprintf.net/vimCheatSheet.html
+http://www.yolinux.com/TUTORIALS/LinuxTutorialAdvanced_vi.html
