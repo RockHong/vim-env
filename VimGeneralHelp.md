@@ -715,6 +715,10 @@ gq
 ==
 http://www.cs.swarthmore.edu/help/vim/reformatting.html
 
+## show space
+:set list    # to show space
+:set nolist  # no to show
+
 
 ###reference
 http://www.fprintf.net/vimCheatSheet.html
