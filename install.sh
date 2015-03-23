@@ -8,13 +8,17 @@
 SCRIPT_PATH=$(x=`dirname $0`; cd $x; y=`pwd`; z=`basename $0`; echo $y/$z)
 HOME_DIR=$(x=`dirname ~`; cd $x; y=`pwd`; z=`basename ~`; echo $y/$z)
 CURRENT_DIR=`dirname $SCRIPT_PATH`
+CURRENT_DATE=`date +%s`
 
 
 if [ -e ~/.vimrc ]; then
-  mv ~/.vimrc ~/.vimrc.old
+  mv ~/.vimrc ~/.vimrc.old.${CURRENT_DATE}
 fi
 if [ -e ~/.gvimrc ]; then
-  mv ~/.gvimrc ~/.gvimrc.old
+  mv ~/.gvimrc ~/.gvimrc.old.${CURRENT_DATE}
+fi
+if [ -e ~/.vimrc.custom ]; then
+  mv ~/.vimrc.custom ~/.vimrc.custom.old.${CURRENT_DATE}
 fi
 
 # not use ~/.ctags now, provide ctags options in vim's nmap
@@ -43,10 +47,14 @@ fi
 # check if system has already has the RIGHT version of ctags
 # TODO: can we install it using zyyper, yum or etc.? 
 # if not, then download source, ./configure, make, make install
-ctags --version | grep -i Exuberant > /dev/null
-if [ $? -ne 0 ]; then
-  echo "Exuberant ctags doesn't exist. please install using zypper or from source"
+if ctags --version &> /dev/null; then 
+  if ! ctags --version | grep -i Exuberant > /dev/null ; then
+    echo "    Note: Exuberant ctags doesn't exist. Install it for symbol navigation"
+  fi
+else
+  echo "    Note: ctags not exist. Install it for symbol navigation"
 fi
+
 
 # for command-t plugin, beg
 # now not use command-t, use ctrlp, so comment it
