@@ -1,9 +1,6 @@
 ###SuperTab     
 
-To start the completion, hitting <Tab> or <S-Tab> (shift+tab) while in insert mode, 
-with at least one non whitespace character before the cursor.
-  
-And then <Tab> or <S-Tab> again to cycle forwards or backwards through the available
+And then '<Tab>' or '<S-Tab>' again to cycle forwards or backwards through the available
 completions.
 
 Currently supertab can recognize method calls or attribute references 
@@ -63,18 +60,18 @@ Optional cross-sessions caching and history allow for fast initialization.
 Mappings and usage conform to Vim conventions.
 
 Basic Usage:
-Run :CtrlP or :CtrlP [starting-directory] to invoke CtrlP in find file mode.
+Run :CtrlP or ':CtrlP [starting-directory]' to invoke CtrlP in find file mode.
 Run :CtrlPBuffer or :CtrlPMRU to start CtrlP in find buffer or find MRU file mode.
-Run :CtrlPMixed to search in Files, Buffers and MRU files at the same time.
+Run ':CtrlPMixed' to search in Files, Buffers and MRU files at the same time.
 Check :help ctrlp-commands and :help ctrlp-extensions for other commands.
 
 
 Once CtrlP is open:
-Run :help ctrlp-mappings or submit ? in CtrlP for more mapping help.
-Press <F5> to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
-Press <c-f> and <c-b> to cycle between modes.
-Press <c-d> to switch to filename search instead of full path.
-Press <c-r> to switch to regexp mode.
+Run :help ctrlp-mappings or submit '?' in CtrlP for more mapping help.
+Press '<F5>' to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
+Press '<c-f>' and '<c-b>' to cycle between modes.
+Press '<c-d>' to switch to filename search instead of full path.
+Press '<c-r>' to switch to regexp mode.
 Use <c-j>, <c-k> or the arrow keys to navigate the result list.
 Use <c-t> or <c-v>, <c-x> to open the selected entry in a new tab or in a new split.
 Use <c-n>, <c-p> to select the next/previous string in the prompt history.

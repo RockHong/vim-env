@@ -16,7 +16,7 @@ filetype plugin on
 " TODO: test tab completion in multi tabs
 
 set nocompatible                   " don't bother with vi compatibility
-
+set fileformats=unix,dos           " now we have the unix newline even on windows
 syntax enable                      " enable syntax highlighting
 
 set autoindent                     " if want to paste something, set noautoindent within vim
