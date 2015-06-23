@@ -49,8 +49,11 @@ set softtabstop=4                   " insert mode tab and backspace use 4 spaces
 set tabstop=8                       " actual tabs occupy 8 characters. before change it, check help
 set wildmenu                        " show a navigable menu for tab completion
 set wildmode=longest,list,full      " TODO test
-"set mouse=a                         " Enable basic mouse behavior such as resizing buffers.
+
+set mouse=a                         " Enable basic mouse behavior such as resizing buffers.
                                      " disable it, so that double-clicking a word can copy it and paste it in terminal
+set ttyfast                         " see more http://usevim.com/2012/05/16/mouse/
+
 set hlsearch                        " highlight searching word. you can remove the highlight by :noh, it will highlight again next search
 set completeopt=menuone,menu        " don't show preview windows when do completion
 
