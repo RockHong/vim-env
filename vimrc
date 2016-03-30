@@ -20,6 +20,10 @@ set fileformats=unix,dos           " now we have the unix newline even on window
 syntax enable                      " enable syntax highlighting
 
 set autoindent                     " if want to paste something, set noautoindent within vim
+set shiftwidth=4                   " normal mode indentation commands use 4 spaces
+" learn more from :help filetype, or
+" http://stackoverflow.com/questions/158968/changing-vim-indentation-behavior-by-file-type
+autocmd FileType ruby,eruby,html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 set autoread                       " reload files when changed on disk, i.e. via `git checkout`
 set backspace=2                    " Fix broken backspace in some setups
 set backupcopy=yes                 " see :help crontab
@@ -41,7 +45,6 @@ set nobomb
 "set number                         " show line numbers
 set ruler                           " show where you are
 set scrolloff=3                     " show context above/below cursorline
-set shiftwidth=4                    " normal mode indentation commands use 4 spaces
 "set showcmd
 set ignorecase                      " this is needed to enable smartcase
 set smartcase                       " case-sensitive search if any caps
