@@ -105,6 +105,8 @@ you can use ctags or Liang Jian's [symfind][8].
 
 See more help via `:help ack`.
 
+If your system has not ack installed, please refer to [this doc](http://beyondgrep.com/install/).
+
 ### tagbar
 [tagbar][14] "is a vim plugin for browsing the tags of source code files. It
 provides a sidebar that displays the ctags-generated tags of the current file,
