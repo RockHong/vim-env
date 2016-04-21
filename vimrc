@@ -93,7 +93,14 @@ nmap <leader>f :NERDTreeFind<CR>
 nmap <leader>a :Ack 
 " ZOMG the_silver_searcher is so much faster than ack
 " er.. ack has more options then ag. but ag works in Windows
-let g:ackprg = 'ag --nogroup --column'
+"let g:ackprg = 'ag --nogroup --column'
+
+" see :help feature-list
+if has('win32')
+  " ack can be installed on windows
+  let g:ackprg = 'ack.cmd '
+endif
+
 
 " *** For TagbarToggle ***
 nmap <leader>] :TagbarToggle<CR>
@@ -101,6 +108,13 @@ nmap <leader>] :TagbarToggle<CR>
 " *** For ctrlp ***
 let g:ctrlp_max_files = 0
 nmap <leader>p :CtrlPBuffer<CR>
+let g:ctrlp_custom_ignore = {'dir':  '\v[\/](\.git|target)$'}
+"  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+"  \ 'dir':  '\v[\/](\.git|target)$',
+"  \ 'file': '\v\.(exe|so|dll)$'
+"  \ }
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+
 
 " *** For CommandT ***
 " to quick open buffer
