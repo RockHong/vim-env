@@ -90,16 +90,17 @@ nmap <leader>f :NERDTreeFind<CR>
 "let g:NERDSpaceDelims=1              " seems default value(0) is better
 
 " *** For Ack ***
-nmap <leader>a :Ack 
+nmap <leader>a :Ack! 
+nmap <leader>f :AckFile! 
 " ZOMG the_silver_searcher is so much faster than ack
 " er.. ack has more options then ag. but ag works in Windows
-"let g:ackprg = 'ag --nogroup --column'
+let g:ackprg = 'ag --nogroup --column'
 
 " see :help feature-list
-if has('win32')
-  " ack can be installed on windows
-  let g:ackprg = 'ack.cmd '
-endif
+" if has('win32')
+"   " ack can be installed on windows
+"   let g:ackprg = 'ack.cmd '
+" endif
 
 
 " *** For TagbarToggle ***
