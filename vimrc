@@ -41,7 +41,7 @@ set nobomb
 "au BufEnter * :set nobomb               " no bomb for the file
 "au BufEnter * :set fileencoding=utf-8   " set file encoding to utf-8
 "set list                           " show trailing whitespace
-"set listchars=tab:▸\ ,trail:▫
+set list listchars=tab:»·,trail:·,eol:¶
 "set number                         " show line numbers
 set ruler                           " show where you are
 set scrolloff=3                     " show context above/below cursorline
@@ -86,12 +86,12 @@ nmap <leader>d :NERDTreeToggle<CR>
 " directory
 nmap <leader>dd :NERDTree 
 " find current file in the tree
-nmap <leader>f :NERDTreeFind<CR>
+nmap <leader>df :NERDTreeFind<CR>
 "let g:NERDSpaceDelims=1              " seems default value(0) is better
 
 " *** For Ack ***
 nmap <leader>a :Ack! 
-nmap <leader>f :AckFile! 
+nmap <leader>af :AckFile! 
 " ZOMG the_silver_searcher is so much faster than ack
 " er.. ack has more options then ag. but ag works in Windows
 let g:ackprg = 'ag --nogroup --column'
@@ -107,14 +107,14 @@ let g:ackprg = 'ag --nogroup --column'
 nmap <leader>] :TagbarToggle<CR>
 
 " *** For ctrlp ***
+nmap <leader>p :CtrlP<CR>
 let g:ctrlp_max_files = 0
-nmap <leader>p :CtrlPBuffer<CR>
-let g:ctrlp_custom_ignore = {'dir':  '\v[\/](\.git|target)$'}
-"  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-"  \ 'dir':  '\v[\/](\.git|target)$',
-"  \ 'file': '\v\.(exe|so|dll)$'
-"  \ }
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_custom_ignore = { 
+  \ 'dir':  '\v[\/](\.git|target)$',
+  \ 'file': '\v\.(exe|so|dll)$'
+  \ }
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 
 " *** For CommandT ***
