@@ -41,7 +41,7 @@ set nobomb
 "au BufEnter * :set nobomb               " no bomb for the file
 "au BufEnter * :set fileencoding=utf-8   " set file encoding to utf-8
 "set list                           " show trailing whitespace
-set list listchars=tab:»·,trail:·,eol:¶
+set listchars=tab:»·,trail:·,eol:¶
 "set number                         " show line numbers
 set ruler                           " show where you are
 set scrolloff=3                     " show context above/below cursorline
