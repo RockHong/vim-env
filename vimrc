@@ -58,6 +58,7 @@ set mouse=a                         " Enable basic mouse behavior such as resizi
 set ttyfast                         " see more http://usevim.com/2012/05/16/mouse/
 
 set hlsearch                        " highlight searching word. you can remove the highlight by :noh, it will highlight again next search
+hi Search ctermbg=LightCyan
 set completeopt=menuone,menu        " don't show preview windows when do completion
 
 " to avoid annoying auto-format when paste text into vim 
