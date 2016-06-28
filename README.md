@@ -18,7 +18,7 @@ it on Windows, and make it as the back-end of ack.vim.)
 ### Linux/cygwin
 Download this repository by using `git clone` or other means. 
 
-Go into the directory of this repository, and run
+Go into the directory of this repository, and run (not `. install.sh`)
 
 	./install.sh
 	
