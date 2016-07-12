@@ -1,7 +1,12 @@
 " see how to disable plugins here:
 " http://stackoverflow.com/questions/4261785/temporarily-disable-some-plugins-using-pathogen-in-vim
-" disable command-t, we use ctrlp now
-let g:pathogen_disabled = ['command-t']
+
+" choose which 'quick file opener' to use
+if has('ruby')
+  let g:pathogen_disabled = ['ctrlp.vim']
+else
+  let g:pathogen_disabled = ['command-t']
+endif
 
 execute pathogen#infect()
 call    pathogen#helptags()
@@ -95,7 +100,9 @@ nmap <leader>a :Ack!
 nmap <leader>af :AckFile! 
 " ZOMG the_silver_searcher is so much faster than ack
 " er.. ack has more options then ag. but ag works in Windows
-let g:ackprg = 'ag --nogroup --column'
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --column'
+endif
 
 " see :help feature-list
 " if has('win32')
@@ -108,26 +115,37 @@ let g:ackprg = 'ag --nogroup --column'
 nmap <leader>] :TagbarToggle<CR>
 
 " *** For ctrlp ***
-nmap <leader>p :CtrlP<CR>
-let g:ctrlp_max_files = 0
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_custom_ignore = { 
-  \ 'dir':  '\v[\/](\.git|target)$',
-  \ 'file': '\v\.(exe|so|dll)$'
-  \ }
-" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+if index(g:pathogen_disabled, 'ctrlp.vim') == -1
+  nmap <leader>p :CtrlP<CR>
+  let g:ctrlp_max_files = 0
+  let g:ctrlp_max_depth = 40
+  let g:ctrlp_clear_cache_on_exit = 0
+  let g:ctrlp_custom_ignore = { 
+    \ 'dir':  '\v[\/](\.git|target)$',
+    \ 'file': '\v\.(exe|so|dll)$'
+    \ }
+  " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+endif
 
 
 " *** For CommandT ***
-" to quick open buffer
-"nmap <leader>b :CommandTBuffer<CR>
-"nmap <leader>t :CommandT<CR>
-" refresh first, then open CommandT window
-"nmap <leader>T :CommandTFlush<CR>:CommandT<CR>
+if index(g:pathogen_disabled, 'command-t') == -1
+  nmap <leader>t :CommandT<CR>
+  nmap <leader>b :CommandTBuffer<CR>
+  nmap <leader>j :CommandTJump<CR>
+  " refresh first, then open CommandT window
+  "nmap <leader>T :CommandTFlush<CR>:CommandT<CR>
+  
+  let g:CommandTMaxHeight=20
+  let g:CommandTMaxFiles=50000
+  let g:CommandTMaxDepth=30
+  let g:CommandTInputDebounce=100
+  let g:CommandTWildIgnore=&wildignore . ",*/target"  " for maven project
+  let g:CommandTWildIgnore=&wildignore . ",*/doc/api/*/*.html,*/tmp"  " for rails project
+  " g:CommandTFileScanner " if finding is slow
+  " g:CommandTSmartCase " new version of command-t support smart case
+endif
 
-"let g:CommandTMaxHeight=20
-"let g:CommandTMaxFiles=100000
-"let g:CommandTMaxDepth=25
 
 let vimrc_cus = $HOME . "/.vimrc.custom"
 if filereadable(vimrc_cus)
