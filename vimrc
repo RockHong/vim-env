@@ -47,7 +47,7 @@ set nobomb
 "au BufEnter * :set fileencoding=utf-8   " set file encoding to utf-8
 "set list                           " show trailing whitespace
 set listchars=tab:»·,trail:·,eol:¶
-"set number                         " show line numbers
+set number                          " show line numbers
 set ruler                           " show where you are
 set scrolloff=3                     " show context above/below cursorline
 "set showcmd
@@ -140,8 +140,10 @@ if index(g:pathogen_disabled, 'command-t') == -1
   let g:CommandTMaxFiles=50000
   let g:CommandTMaxDepth=30
   let g:CommandTInputDebounce=100
-  let g:CommandTWildIgnore=&wildignore . ",*/target"  " for maven project
-  let g:CommandTWildIgnore=&wildignore . ",*/doc/api/*/*.html,*/tmp"  " for rails project
+  let g:CommandTWildIgnore=&wildignore
+  let g:CommandTWildIgnore=CommandTWildIgnore . ",*/target"  " for maven project
+  let g:CommandTWildIgnore=CommandTWildIgnore . ",*/node_modules"  " for maven project
+  let g:CommandTWildIgnore=CommandTWildIgnore . ",*/doc/api/*/*.html,*/tmp"  " for rails project
   " g:CommandTFileScanner " if finding is slow
   " g:CommandTSmartCase " new version of command-t support smart case
 endif
