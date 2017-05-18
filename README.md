@@ -28,7 +28,8 @@ then it proves that vim plugin works.
 ### Windows 7/10 
 Clone this repository. 
 
-Windows also supports symbolic link (test on Windows 10).
+Windows also supports [hard link](https://msdn.microsoft.com/en-us/library/windows/desktop/aa365006(v=vs.85).aspx)
+and [symbolic link](https://msdn.microsoft.com/en-us/library/windows/desktop/aa363878(v=vs.85).aspx) (at least on Windows 10).
 Run "cmd" as administrator, and run following commands,
 
     c:\Users\hong>mklink /d vimfiles c:\repos\vim-env
@@ -154,7 +155,7 @@ Liang Jian's [symfind][8] is another option for symbol looking up.
 
 ###color scheme
 It says *solarized* is good color scheme. There is a [plugin][15] for it.
-Maybe you don't need it, if your terminal also has taht color scheme.
+Maybe you don't need it, if your terminal also has that color scheme.
 
 ###On Windows 7
 If encounter problem with `^M`, run the following command in cygwin
