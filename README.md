@@ -25,8 +25,22 @@ Go into the directory of this repository, and run (not `. install.sh`)
 Test: open vim and enter `,d`. If a window shows up in left side of vim, 
 then it proves that vim plugin works.
 
-### Windows 7 
-Clone this repository. Move it to HOME directory (for example, 
+### Windows 7/10 
+Clone this repository. 
+
+Windows also supports symbolic link (test on Windows 10).
+Run "cmd" as administrator, and run following commands,
+
+    c:\Users\hong>mklink /d vimfiles c:\repos\vim-env
+    symbolic link created for vimfiles <<===>> c:\repos\vim-env
+    
+    c:\Users\hong>mklink _vimrc c:\repos\vim-env\vimrc
+    symbolic link created for _vimrc <<===>> c:\repos\vim-env\vimrc
+    
+    c:\Users\hong>mklink _gvimrc c:\repos\vim-env\gvimrc
+    symbolic link created for _gvimrc <<===>> c:\repos\vim-env\gvimrc
+
+Or you can make a hard copy. Copy repo to HOME directory (for example, 
 C:\Users\SomeUser), and rename it to "vimfiles".
 
 Copy "vimfiles/vimrc" to "HOME/_vimrc".
