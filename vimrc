@@ -115,11 +115,16 @@ endif
 nmap <leader>] :TagbarToggle<CR>
 
 " *** For ctrlp ***
+" ctrlp respects vim's wildignore
+" for rails
+set wildignore+=*/tmp/cache/assets/*
 if index(g:pathogen_disabled, 'ctrlp.vim') == -1
   nmap <leader>p :CtrlP<CR>
   let g:ctrlp_max_files = 0
   let g:ctrlp_max_depth = 40
   let g:ctrlp_clear_cache_on_exit = 0
+  " want to open files like .env, .gitignore
+  let g:ctrlp_show_hidden = 1
   let g:ctrlp_custom_ignore = { 
     \ 'dir':  '\v[\/](\.git|target)$',
     \ 'file': '\v\.(exe|so|dll)$'
