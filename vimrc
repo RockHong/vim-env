@@ -117,6 +117,8 @@ endif
 nmap <leader>] :TagbarToggle<CR>
 
 " *** For ctrlp ***
+" sometimes, after modify ctrlp config here, only restarting vim is not enough,
+" :ClearAllCtrlPCaches may also be run to let the config take effect.
 " ctrlp respects vim's wildignore
 " for rails
 set wildignore+=*/tmp/cache/assets/*
