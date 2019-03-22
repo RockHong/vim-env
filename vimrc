@@ -3,10 +3,12 @@
 
 " choose which 'quick file opener' to use
 if has('ruby')
-  let g:pathogen_disabled = ['ctrlp.vim']
+  "let g:pathogen_disabled = ['ctrlp.vim']
 else
-  let g:pathogen_disabled = ['command-t']
+  "let g:pathogen_disabled = ['command-t']
 endif
+
+let g:pathogen_disabled = ['command-t']
 
 execute pathogen#infect()
 call    pathogen#helptags()
@@ -120,6 +122,7 @@ nmap <leader>] :TagbarToggle<CR>
 set wildignore+=*/tmp/cache/assets/*
 if index(g:pathogen_disabled, 'ctrlp.vim') == -1
   nmap <leader>p :CtrlP<CR>
+  nmap <leader>P :CtrlPBuffer<CR>
   let g:ctrlp_max_files = 0
   let g:ctrlp_max_depth = 40
   let g:ctrlp_clear_cache_on_exit = 0
